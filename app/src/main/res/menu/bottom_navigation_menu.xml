@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_btmnav_home"
+        android:title="@string/btmnav_home_title"
+        />
+    <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_btmnav_notification"
+            android:title="@string/btmnav_notification_title"
+            />
+    <item
+            android:id="@+id/nav_add"
+            android:icon="@drawable/ic_btmnav_add"
+            android:title="@string/btmnav_add_title"
+            />
+    <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_btmnav_search"
+            android:title="@string/btmnav_search_title"
+            />
+    <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_btmnav_profile"
+            android:title="@string/btmnav_profile_title"
+            />
+
+</menu>

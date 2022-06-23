@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SocialMediaApp-1</string>
+
+    <string name="btmnav_home_title">Home</string>
+    <string name="btmnav_search_title">Search</string>
+    <string name="btmnav_add_title">Add</string>
+    <string name="btmnav_notification_title">Notification</string>
+    <string name="btmnav_profile_title">Profile</string>
+</resources>
