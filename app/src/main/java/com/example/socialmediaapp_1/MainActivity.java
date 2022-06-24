@@ -12,6 +12,7 @@ import com.example.socialmediaapp_1.Fragments.HomeFragment;
 import com.example.socialmediaapp_1.Fragments.NotificationFragment;
 import com.example.socialmediaapp_1.Fragments.ProfileFragment;
 import com.example.socialmediaapp_1.Fragments.SearchFragment;
+import com.example.socialmediaapp_1.databinding.ActivityMainBinding;
 import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -49,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_view);
-        bottomNav.setOnItemSelectedListener(btmNavListener);
+        binding.bottomNavigationView.setOnItemSelectedListener(btmNavListener);
     }
 }
