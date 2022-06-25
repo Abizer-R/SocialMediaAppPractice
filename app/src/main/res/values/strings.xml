@@ -6,4 +6,10 @@
     <string name="btmnav_add_title">Add</string>
     <string name="btmnav_notification_title">Notification</string>
     <string name="btmnav_profile_title">Profile</string>
+
+    <string name="home_fragment_actionbar_title">Discover</string>
+
+    <string name="user_story_title">your story</string>
+    <string name="story_profile_placeholder">Profile_name</string>
+
 </resources>

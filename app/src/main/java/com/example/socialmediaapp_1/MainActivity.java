@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.bottom_nav_fragment_container,
+                new HomeFragment()).commit();
+
         binding.bottomNavigationView.setOnItemSelectedListener(btmNavListener);
     }
 }
