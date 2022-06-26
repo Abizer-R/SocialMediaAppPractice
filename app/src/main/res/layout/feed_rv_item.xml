@@ -64,7 +64,7 @@
         android:id="@+id/feed_rv_like_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/like_count_placeholder"
+        android:text="@string/number_placeholder"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/feed_rv_like_btn"
         app:layout_constraintStart_toEndOf="@+id/feed_rv_like_btn"
