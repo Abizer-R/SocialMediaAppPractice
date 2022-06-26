@@ -11,7 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.socialmediaapp_1.Adapter.FeedAdapter;
 import com.example.socialmediaapp_1.Adapter.StoryAdapter;
+import com.example.socialmediaapp_1.Models.FeedPost;
 import com.example.socialmediaapp_1.Models.Story;
 import com.example.socialmediaapp_1.R;
 
@@ -23,6 +25,9 @@ public class HomeFragment extends Fragment {
     private StoryAdapter storyAdapter;
     private List<Story> stories;
 
+    private FeedAdapter feedAdapter;
+    private List<FeedPost> feedPosts;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +35,9 @@ public class HomeFragment extends Fragment {
 
         setStoryRecyclerView(view);
         setStoryAdapter();  //TODO: change put real thing into story Adapter
+
+        setfeedRecyclerView(view);
+        setFeedAdapter();  //TODO: change put real thing into story Adapter
 
         return view;
     }
@@ -46,16 +54,41 @@ public class HomeFragment extends Fragment {
 
     private void setStoryAdapter() {
 
-        List<Story> storyList = new ArrayList<>();
+        stories = new ArrayList<>();
 
-        storyList.add(new Story("Abizer1", R.drawable.placeholder_profile, false));
-        storyList.add(new Story("Abizer2", R.drawable.placeholder_profile, false));
-        storyList.add(new Story("Abizer3", R.drawable.placeholder_profile, false));
-        storyList.add(new Story("Abizer4", R.drawable.placeholder_profile, false));
-        storyList.add(new Story("Abizer5", R.drawable.placeholder_profile, false));
-        storyList.add(new Story("Abizer6", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer1", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer2", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer3", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer4", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer5", R.drawable.placeholder_profile, false));
+        stories.add(new Story("Abizer6", R.drawable.placeholder_profile, false));
 
-        storyAdapter.setStories(storyList);
+        storyAdapter.setStories(stories);
 
+    }
+
+    private void setfeedRecyclerView(View view) {
+        RecyclerView feedRecyclerView = view.findViewById(R.id.feed_rv);
+        feedRecyclerView.setLayoutManager(
+                new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
+        feedRecyclerView.setHasFixedSize(true);
+
+        feedAdapter = new FeedAdapter(view.getContext());
+        feedRecyclerView.setAdapter(feedAdapter);
+
+    }
+
+    private void setFeedAdapter() {
+
+        feedPosts = new ArrayList<>();
+
+        feedPosts.add(new FeedPost("Abizer1", "yo boiii", R.drawable.placeholder_profile, R.drawable.img1, 23, 0, false, true));
+        feedPosts.add(new FeedPost("Abizer2", "222222", R.drawable.placeholder_profile, R.drawable.img2, 0, 3, true, false));
+        feedPosts.add(new FeedPost("Abizer3", "333333", R.drawable.placeholder_profile, R.drawable.img2, 43, 4, true, true));
+        feedPosts.add(new FeedPost("Abizer4", "444444", R.drawable.placeholder_profile, R.drawable.img2, 2333, 23, true, false));
+        feedPosts.add(new FeedPost("Abizer5", "555555", R.drawable.placeholder_profile, R.drawable.img2, 2, 43, true, true));
+        feedPosts.add(new FeedPost("Abizer6", "666666", R.drawable.placeholder_profile, R.drawable.img1, 3, 0, false, false));
+
+        feedAdapter.setFeedPosts(feedPosts);
     }
 }

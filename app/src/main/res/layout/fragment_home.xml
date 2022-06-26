@@ -17,7 +17,7 @@
             app:layout_scrollFlags="scroll"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:elevation="8dp">
+            android:elevation="4dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="48dp"
@@ -72,8 +72,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/shapeableImageView"
-                            android:layout_width="72dp"
-                            android:layout_height="72dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:src="@drawable/placeholder_profile"
                             android:tint="#4D000000"
@@ -85,7 +85,7 @@
                         <ImageView
                             android:id="@+id/story_add_button"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:src="@drawable/ic_btmnav_add"
                             app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
                             app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
@@ -98,6 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/user_story_title"
+                            android:textSize="10sp"
                             app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
                             app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
                             app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
@@ -120,15 +121,16 @@
 
             </HorizontalScrollView>
 
-
-
-            <View
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/feed_rv"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#51A2A8AD"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontal_sv"/>
+                app:layout_constraintTop_toBottomOf="@+id/horizontal_sv"
+                tools:listitem="@layout/feed_rv_item"
+                android:nestedScrollingEnabled="false"/>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
