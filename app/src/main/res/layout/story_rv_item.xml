@@ -8,8 +8,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/story_rv_profile_image"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/placeholder_profile"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="@string/story_profile_placeholder"
+        android:text="@string/profile_name_placeholder"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/story_rv_profile_image"
         app:layout_constraintStart_toStartOf="@+id/story_rv_profile_image"
         app:layout_constraintTop_toBottomOf="@+id/story_rv_profile_image" />

@@ -9,7 +9,13 @@
 
     <string name="home_fragment_actionbar_title">Discover</string>
 
+
     <string name="user_story_title">your story</string>
-    <string name="story_profile_placeholder">Profile_name</string>
+    <string name="profile_name_placeholder">Profile_name</string>
+
+    <string name="like_count_placeholder">234</string>
+    <string name="view_all_comments">View all comments</string>
+    <string name="caption_placeholder">Profile_name Caption...</string>
+
 
 </resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/feed_rv_profile_image"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/placeholder_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/feed_rv_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_profile_image"
+        app:layout_constraintStart_toEndOf="@+id/feed_rv_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_profile_image"
+        android:text="@string/profile_name_placeholder"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_more_actions_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_actions_menu"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_profile_image"
+        android:layout_marginEnd="8dp"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder_feed_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feed_rv_profile_image"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_like_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_post_not_liked_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feed_rv_post_image"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/feed_rv_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/like_count_placeholder"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_like_btn"
+        app:layout_constraintStart_toEndOf="@+id/feed_rv_like_btn"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_like_btn"
+        android:layout_marginStart="8dp"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_comment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_post_comment"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_like_count"
+        app:layout_constraintStart_toEndOf="@+id/feed_rv_like_count"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_like_count"
+        android:layout_marginStart="16dp"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_post_share"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_comment_btn"
+        app:layout_constraintStart_toEndOf="@+id/feed_rv_comment_btn"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_comment_btn"
+        android:layout_marginStart="40dp"/>
+
+    <ImageView
+        android:id="@+id/feed_rv_bookmark_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_post_not_bookmarked"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_rv_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/feed_rv_share_btn"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/feed_rv_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/caption_placeholder"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/feed_rv_like_btn"
+        app:layout_constraintTop_toBottomOf="@+id/feed_rv_like_btn" />
+
+    <TextView
+        android:id="@+id/feed_rv_view_all_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/view_all_comments"
+        app:layout_constraintStart_toStartOf="@+id/feed_rv_caption"
+        app:layout_constraintTop_toBottomOf="@+id/feed_rv_caption" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#51A2A8AD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feed_rv_view_all_comment"
+        android:layout_margin="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
