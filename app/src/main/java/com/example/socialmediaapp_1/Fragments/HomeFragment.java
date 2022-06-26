@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +36,9 @@ public class HomeFragment extends Fragment {
 
         setStoryRecyclerView(view);
         setStoryAdapter();  //TODO: change put real thing into story Adapter
+
+        HorizontalScrollView storyPanelSV = view.findViewById(R.id.horizontal_sv);
+        storyPanelSV.scrollTo(0, 0);
 
         setfeedRecyclerView(view);
         setFeedAdapter();  //TODO: change put real thing into story Adapter
