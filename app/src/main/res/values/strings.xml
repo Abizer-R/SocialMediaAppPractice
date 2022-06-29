@@ -15,7 +15,7 @@
     <string name="view_all_comments">View all comments</string>
     <string name="caption_placeholder">Profile_name Caption...</string>
 
-<!--    Strings used in Profile Fragment-->
+    <!--    Strings used in Profile Fragment-->
     <string name="tv_post_title">Posts</string>
     <string name="tv_Followers_title">Followers</string>
     <string name="tv_Following_title">Following</string>

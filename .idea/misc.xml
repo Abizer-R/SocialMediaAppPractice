@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/drawable/ic_post_like.xml" value="0.1575" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/drawable/ic_post_not_liked.xml" value="0.1575" />
+        <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/drawable/input_view_bg.xml" value="0.157" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/drawable/round_edge.xml" value="0.1575" />
+        <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/activity_login.xml" value="0.2609375" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/activity_main.xml" value="0.2609375" />
+        <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/activity_register.xml" value="0.2609375" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/feed_rv_item.xml" value="0.264" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_add.xml" value="0.2609375" />
-        <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_home.xml" value="0.12388724035608309" />
+        <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_notification.xml" value="0.2609375" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_profile.xml" value="0.2609375" />
         <entry key="..\:/Users/abizer's ideapad/AndroidStudioProjects/SocialMediaApp1/app/src/main/res/layout/fragment_search.xml" value="0.2609375" />
