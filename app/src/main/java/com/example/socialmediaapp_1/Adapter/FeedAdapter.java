@@ -1,12 +1,7 @@
 package com.example.socialmediaapp_1.Adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.text.Html;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +11,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.socialmediaapp_1.Models.FeedPost;
+import com.example.socialmediaapp_1.Models.FeedPostModel;
 import com.example.socialmediaapp_1.R;
+import com.example.socialmediaapp_1.Utils.GeneralUtils;
 
 import java.util.List;
 
 
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder> {
 
-    private List<FeedPost> feedPosts;
-    Context mcontext;
+    private List<FeedPostModel> feedPosts;
+    private Context mcontext;
 
     public FeedAdapter(Context mcontext) {
         this.mcontext = mcontext;
@@ -43,13 +39,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     @Override
     public void onBindViewHolder(@NonNull FeedViewHolder holder, int position) {
 
-        FeedPost currPost = feedPosts.get(position);
+        FeedPostModel currPost = feedPosts.get(position);
 
         holder.profileImage.setImageResource(currPost.getProfileImage());
         holder.profileName.setText(currPost.getProfileName());
         holder.postImage.setImageResource(currPost.getPostImage());
         holder.likeCount.setText("" + currPost.getLikeCount());
-        setCaption(holder.caption, currPost.getProfileName(), currPost.getCaption());
+        holder.caption.setText(GeneralUtils.getCaption(currPost.getProfileName(), currPost.getCaption()));
 
         if(currPost.getCommentCount() == 0)
             holder.viewComments.setVisibility(View.GONE);
@@ -64,17 +60,12 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
     }
 
-    private void setCaption(TextView tvCaptionString, String profileName, String caption) {
-        tvCaptionString.setText(
-                Html.fromHtml("<b>" + profileName + "</b> " + caption));
-    }
-
     @Override
     public int getItemCount() {
         return feedPosts.size();
     }
 
-    public void setFeedPosts(List<FeedPost> feedPosts) {
+    public void setFeedPosts(List<FeedPostModel> feedPosts) {
         this.feedPosts = feedPosts;
         notifyDataSetChanged();  // TODO: change this to something better
     }

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.socialmediaapp_1.Adapter.FeedAdapter;
 import com.example.socialmediaapp_1.Adapter.StoryAdapter;
-import com.example.socialmediaapp_1.Models.FeedPost;
-import com.example.socialmediaapp_1.Models.Story;
+import com.example.socialmediaapp_1.Models.FeedPostModel;
+import com.example.socialmediaapp_1.Models.StoryModel;
 import com.example.socialmediaapp_1.R;
 
 import java.util.ArrayList;
@@ -24,10 +24,10 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private StoryAdapter storyAdapter;
-    private List<Story> stories;
+    private List<StoryModel> stories;
 
     private FeedAdapter feedAdapter;
-    private List<FeedPost> feedPosts;
+    private List<FeedPostModel> feedPosts;
 
     @Nullable
     @Override
@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
         storyPanelSV.scrollTo(0, 0);
 
         setfeedRecyclerView(view);
-        setFeedAdapter();  //TODO: change put real thing into story Adapter
+        setFeedAdapter();  //TODO: change put real thing into feed Adapter
 
         return view;
     }
@@ -60,12 +60,12 @@ public class HomeFragment extends Fragment {
 
         stories = new ArrayList<>();
 
-        stories.add(new Story("Abizer1", R.drawable.placeholder_profile, false));
-        stories.add(new Story("Abizer2", R.drawable.placeholder_profile, false));
-        stories.add(new Story("Abizer3", R.drawable.placeholder_profile, false));
-        stories.add(new Story("Abizer4", R.drawable.placeholder_profile, false));
-        stories.add(new Story("Abizer5", R.drawable.placeholder_profile, false));
-        stories.add(new Story("Abizer6", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer1", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer2", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer3", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer4", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer5", R.drawable.placeholder_profile, false));
+        stories.add(new StoryModel("Abizer6", R.drawable.placeholder_profile, false));
 
         storyAdapter.setStories(stories);
 
@@ -86,12 +86,12 @@ public class HomeFragment extends Fragment {
 
         feedPosts = new ArrayList<>();
 
-        feedPosts.add(new FeedPost("Abizer1", "yo boiii", R.drawable.placeholder_profile, R.drawable.img1, 23, 0, false, true));
-        feedPosts.add(new FeedPost("Abizer2", "222222", R.drawable.placeholder_profile, R.drawable.img2, 0, 3, true, false));
-        feedPosts.add(new FeedPost("Abizer3", "333333", R.drawable.placeholder_profile, R.drawable.img2, 43, 4, true, true));
-        feedPosts.add(new FeedPost("Abizer4", "444444", R.drawable.placeholder_profile, R.drawable.img2, 2333, 23, true, false));
-        feedPosts.add(new FeedPost("Abizer5", "555555", R.drawable.placeholder_profile, R.drawable.img2, 2, 43, true, true));
-        feedPosts.add(new FeedPost("Abizer6", "666666", R.drawable.placeholder_profile, R.drawable.img1, 3, 0, false, false));
+        feedPosts.add(new FeedPostModel("Abizer1", "yo boiii", R.drawable.placeholder_profile, R.drawable.img1, 23, 0, false, true));
+        feedPosts.add(new FeedPostModel("Abizer2", "222222", R.drawable.placeholder_profile, R.drawable.img2, 0, 3, true, false));
+        feedPosts.add(new FeedPostModel("Abizer3", "333333", R.drawable.placeholder_profile, R.drawable.img2, 43, 4, true, true));
+        feedPosts.add(new FeedPostModel("Abizer4", "444444", R.drawable.placeholder_profile, R.drawable.img2, 2333, 23, true, false));
+        feedPosts.add(new FeedPostModel("Abizer5", "555555", R.drawable.placeholder_profile, R.drawable.img2, 2, 43, true, true));
+        feedPosts.add(new FeedPostModel("Abizer6", "666666", R.drawable.placeholder_profile, R.drawable.img1, 3, 0, false, false));
 
         feedAdapter.setFeedPosts(feedPosts);
     }

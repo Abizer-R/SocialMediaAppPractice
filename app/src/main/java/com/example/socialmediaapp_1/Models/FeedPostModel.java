@@ -1,6 +1,6 @@
 package com.example.socialmediaapp_1.Models;
 
-public class FeedPost {
+public class FeedPostModel {
 
     private String profileName;
     private String caption;
@@ -11,7 +11,7 @@ public class FeedPost {
     private boolean bookmarked;
     private boolean liked;
 
-    public FeedPost(String profileName, String caption, int profileImage, int postImage, int likeCount, int commentCount, boolean bookmarked, boolean liked) {
+    public FeedPostModel(String profileName, String caption, int profileImage, int postImage, int likeCount, int commentCount, boolean bookmarked, boolean liked) {
         this.profileName = profileName;
         this.caption = caption;
         this.profileImage = profileImage;
