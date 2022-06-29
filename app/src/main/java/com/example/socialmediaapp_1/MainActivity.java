@@ -9,12 +9,10 @@ import android.view.MenuItem;
 
 import com.example.socialmediaapp_1.Fragments.AddFragment;
 import com.example.socialmediaapp_1.Fragments.HomeFragment;
-import com.example.socialmediaapp_1.Fragments.NotificationFragment;
+import com.example.socialmediaapp_1.Fragments.ActivityFragment;
 import com.example.socialmediaapp_1.Fragments.ProfileFragment;
 import com.example.socialmediaapp_1.Fragments.SearchFragment;
 import com.example.socialmediaapp_1.databinding.ActivityMainBinding;
-import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new HomeFragment();
                             break;
                         case R.id.nav_notification:
-                            selectedFragment = new NotificationFragment();
+                            selectedFragment = new ActivityFragment();
                             break;
                         case R.id.nav_add:
                             selectedFragment = new AddFragment();

@@ -4,7 +4,7 @@
     <string name="btmnav_home_title">Home</string>
     <string name="btmnav_search_title">Search</string>
     <string name="btmnav_add_title">Add</string>
-    <string name="btmnav_notification_title">Notification</string>
+    <string name="btmnav_activity_title">Activity</string>
     <string name="btmnav_profile_title">Profile</string>
 
     <string name="profile_name_placeholder">Profile_name</string>
@@ -24,5 +24,24 @@
     <string name="tv_edit_profile">Edit Profile</string>
 
     <string name="settings_title">Settings</string>
+    <string name="activity_title">Activity</string>
+
+    <!--    Strings used in Activity Fragment-->
+    <string name="tv_follow_requests">Follow Requests</string>
+    <string name="tv_follow_requests_instruction">Approve or Ignore Requests</string>
+    <string name="tv_today">Today</string>
+    <string name="tv_yesterday">Yesterday</string>
+    <string name="tv_this_week">This Week</string>
+    <string name="tv_this_month">This Month</string>
+    <string name="tv_earlier">Earlier</string>
+
+    <!--    Strings used in Notification -->
+    <string name="notification_liked_story"> liked your story.</string>
+    <string name="notification_liked_post"> liked your post.</string>
+    <string name="notification_started_following"> started following you.</string>
+    <string name="notification_commented"> commented on your post</string>
+    <string name="notification_follow_request"> requested to follow you.</string>
+    <string name="confirm">Confirm</string>
+    <string name="delete">Delete</string>
 
 </resources>

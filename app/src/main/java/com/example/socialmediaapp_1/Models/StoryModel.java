@@ -1,12 +1,12 @@
 package com.example.socialmediaapp_1.Models;
 
-public class Story {
+public class StoryModel {
 
     private String profileName;
     private int profileImage;
     private Boolean seen;   //TODO: implemented seen/unseen outer circle on story
 
-    public Story(String profileName, int profileImage, Boolean seen) {
+    public StoryModel(String profileName, int profileImage, Boolean seen) {
         this.profileName = profileName;
         this.profileImage = profileImage;
         this.seen = seen;
