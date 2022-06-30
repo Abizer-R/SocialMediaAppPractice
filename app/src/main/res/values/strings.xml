@@ -44,4 +44,8 @@
     <string name="confirm">Confirm</string>
     <string name="delete">Delete</string>
 
+
+    <string name="empty_field_message">Don\'t leave the fields empty</string>
+    <string name="short_password">Password should consist at least 6 characters</string>
+
 </resources>
