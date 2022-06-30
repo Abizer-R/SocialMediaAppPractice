@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
@@ -69,11 +70,23 @@ public class LoginActivity extends AppCompatActivity {
                             //Set flags to make sure user can't go back
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
-                            
+
                         } else {
                             Toast.makeText(LoginActivity.this, "Error in logging in", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = auth.getCurrentUser();
+        if(user != null) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            //Set flags to make sure user can't go back
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
     }
 }
