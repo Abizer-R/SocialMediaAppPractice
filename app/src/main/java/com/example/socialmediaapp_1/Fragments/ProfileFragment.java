@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.socialmediaapp_1.R;
+
+import org.w3c.dom.Text;
 
 public class ProfileFragment extends Fragment {
 
@@ -34,6 +37,19 @@ public class ProfileFragment extends Fragment {
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
         toolbar.setTitle("");
+
+        TextView editProfileTv = view.findViewById(R.id.profile_fragment_edit_profile_btn);
+        editProfileTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditProfileFragment editProfileFragment = new EditProfileFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.bottom_nav_fragment_container, editProfileFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         return view;
     }
 

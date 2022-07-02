@@ -48,4 +48,12 @@
     <string name="empty_field_message">Don\'t leave the fields empty</string>
     <string name="short_password">Password should consist at least 6 characters</string>
 
+    <!--    Strings used in Edit Profile Fragment -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_profile_photo">Change Profile Photo</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="bio">Bio</string>
+
+
 </resources>
