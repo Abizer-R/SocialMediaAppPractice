@@ -25,6 +25,8 @@ import com.example.socialmediaapp_1.R;
 import com.example.socialmediaapp_1.databinding.FragmentEditProfileBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -39,12 +41,14 @@ public class EditProfileFragment extends Fragment {
 
     FirebaseAuth auth;
     StorageReference storageRef;
+    DatabaseReference dbRef;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         auth = FirebaseAuth.getInstance();
         storageRef = FirebaseStorage.getInstance().getReference().child("profile_photo");
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Users");
     }
 
     @Nullable
@@ -74,12 +78,26 @@ public class EditProfileFragment extends Fragment {
         ActivityResultLauncher<String> launcher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
             @Override
             public void onActivityResult(Uri result) {
+                //TODO: start an updating dialog box
                 profilePhoto.setImageURI(result);
                 // Uploading profile photo on firebase storage
                 storageRef.child(auth.getUid()).putFile(result).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(activity, "Profile Image uploaded Successfully", Toast.LENGTH_SHORT).show();
+
+                        //Getting download url of profile photo and adding it to user info in firebase database
+                        storageRef.child(auth.getUid()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                dbRef.child(auth.getUid()).child("Info")
+                                        .child("imgurl")
+                                        .setValue(uri.toString());
+
+                                // TODO: close the updating dialog box here
+                                Toast.makeText(activity, "Profile Image updated Successfully", Toast.LENGTH_SHORT).show();
+                                getActivity().onBackPressed();
+                            }
+                        });
                     }
                 });
             }
