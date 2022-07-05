@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -22,6 +23,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.socialmediaapp_1.R;
 import com.example.socialmediaapp_1.databinding.FragmentEditProfileBinding;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class EditProfileFragment extends Fragment {
 
@@ -30,6 +36,16 @@ public class EditProfileFragment extends Fragment {
     private Toolbar toolbar;
     private TextView changeProfileImageView;
     private ImageView profilePhoto;
+
+    FirebaseAuth auth;
+    StorageReference storageRef;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        auth = FirebaseAuth.getInstance();
+        storageRef = FirebaseStorage.getInstance().getReference().child("profile_photo");
+    }
 
     @Nullable
     @Override
@@ -59,6 +75,13 @@ public class EditProfileFragment extends Fragment {
             @Override
             public void onActivityResult(Uri result) {
                 profilePhoto.setImageURI(result);
+                // Uploading profile photo on firebase storage
+                storageRef.child(auth.getUid()).putFile(result).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Toast.makeText(activity, "Profile Image uploaded Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
