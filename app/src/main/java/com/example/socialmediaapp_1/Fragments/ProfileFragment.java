@@ -1,12 +1,15 @@
 package com.example.socialmediaapp_1.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.socialmediaapp_1.LoginActivity;
+import com.example.socialmediaapp_1.MainActivity;
 import com.example.socialmediaapp_1.R;
 import com.example.socialmediaapp_1.databinding.FragmentProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -72,6 +77,19 @@ public class ProfileFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.profile_fragment_settings, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        // Temporarily using settings as log out button
+        if(item.getItemId() == R.id.profile_fragment_settings) {
+            auth.signOut();
+            Toast.makeText(getActivity(), "Logged out!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void retrieveData() {

@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerUser(String usernameEntered, String emailEntered, String passwordEntered) {
+        // TODO: Check if email is already being used
         auth.createUserWithEmailAndPassword(emailEntered, passwordEntered)
                 .addOnCompleteListener(RegisterActivity.this , new OnCompleteListener<AuthResult>() {
                     @Override
@@ -74,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                             map.put("username", usernameEntered);
                             map.put("email", emailEntered);
                             map.put("password", passwordEntered);
+                            map.put("Uid", auth.getUid());
 
                             dbRef.child(auth.getUid())
                                     .child("Info")
