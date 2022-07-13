@@ -57,6 +57,8 @@
 
     <!--    Strings used in Follow User Fragment -->
     <string name="follow">Follow</string>
+    
+    <string name="follow_user_bundle_key">follow_user_bundle_key</string>
 
 
 </resources>

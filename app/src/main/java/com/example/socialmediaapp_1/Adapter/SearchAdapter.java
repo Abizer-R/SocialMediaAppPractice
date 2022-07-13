@@ -58,6 +58,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 .load(currUser.getImgurl())
                 .placeholder(R.drawable.placeholder_profile)
                 .into(holder.profileImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(searchRVInterface != null) {
+                    searchRVInterface.onItemClick(currUser.getUid());
+                }
+            }
+        });
     }
 
     @Override
@@ -81,19 +90,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             name = itemView.findViewById(R.id.search_rv_name);
             username = itemView.findViewById(R.id.search_rv_username);
             profileImage = itemView.findViewById(R.id.search_rv_profile_image);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(searchRVInterface != null) {
-                        int position = getAdapterPosition();
-
-                        if(position != RecyclerView.NO_POSITION) {
-                            searchRVInterface.onItemClick(position);
-                        }
-                    }
-                }
-            });
         }
     }
 }
