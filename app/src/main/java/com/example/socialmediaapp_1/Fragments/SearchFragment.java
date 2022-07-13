@@ -112,6 +112,7 @@ public class SearchFragment extends Fragment implements SearchRVInterface {
 
         Bundle bundle = new Bundle();
         bundle.putString(getString(R.string.follow_user_bundle_key), userID);
+        followUserFragment.setArguments(bundle);
         //By calling addToBackStack(), the replaced fragment is saved to back stack so that the user can
         // reverse the transaction and bring back the previous fragment by pressing back button
         transaction.addToBackStack(null);
