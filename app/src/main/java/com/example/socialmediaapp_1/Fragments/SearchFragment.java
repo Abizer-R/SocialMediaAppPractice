@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.socialmediaapp_1.Adapter.SearchAdapter;
 import com.example.socialmediaapp_1.Models.UserModel;
 import com.example.socialmediaapp_1.R;
+import com.example.socialmediaapp_1.SearchRVInterface;
 import com.example.socialmediaapp_1.databinding.FragmentSearchBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements SearchRVInterface {
 
     private SearchAdapter searchAdapter;
     private List<UserModel> userList;
@@ -50,7 +53,7 @@ public class SearchFragment extends Fragment {
         binding = FragmentSearchBinding.inflate(inflater, container, false);
 
         userList = new ArrayList<>();
-        searchAdapter = new SearchAdapter(getContext());
+        searchAdapter = new SearchAdapter(getContext(), this);
         searchAdapter.setUserList(userList);
         binding.searchRv.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.searchRv.setAdapter(searchAdapter);
@@ -97,5 +100,19 @@ public class SearchFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        FollowUserFragment followUserFragment = new FollowUserFragment();
+        //By calling addToBackStack(), the replaced fragment is saved to back stack so that the user can
+        // reverse the transaction and bring back the previous fragment by pressing back button
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.bottom_nav_fragment_container, followUserFragment);
+        transaction.commit();
     }
 }

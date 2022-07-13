@@ -55,5 +55,8 @@
     <string name="username">Username</string>
     <string name="bio">Bio</string>
 
+    <!--    Strings used in Follow User Fragment -->
+    <string name="follow">Follow</string>
+
 
 </resources>
