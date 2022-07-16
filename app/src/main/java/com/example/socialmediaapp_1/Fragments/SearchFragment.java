@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.socialmediaapp_1.Adapter.SearchAdapter;
 import com.example.socialmediaapp_1.Models.UserModel;
 import com.example.socialmediaapp_1.R;
-import com.example.socialmediaapp_1.SearchRVInterface;
+import com.example.socialmediaapp_1.SearchRecyclerViewOnClickCallback;
 import com.example.socialmediaapp_1.databinding.FragmentSearchBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -29,9 +29,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
-public class SearchFragment extends Fragment implements SearchRVInterface {
+public class SearchFragment extends Fragment implements SearchRecyclerViewOnClickCallback {
 
     private SearchAdapter searchAdapter;
     private List<UserModel> userList;

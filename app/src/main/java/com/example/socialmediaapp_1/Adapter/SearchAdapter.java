@@ -1,7 +1,6 @@
 package com.example.socialmediaapp_1.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,29 +8,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.socialmediaapp_1.Fragments.FollowUserFragment;
 import com.example.socialmediaapp_1.Models.UserModel;
 import com.example.socialmediaapp_1.R;
-import com.example.socialmediaapp_1.SearchRVInterface;
+import com.example.socialmediaapp_1.SearchRecyclerViewOnClickCallback;
 
 import java.util.List;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
 
-    private final SearchRVInterface searchRVInterface;
+    private final SearchRecyclerViewOnClickCallback searchRecyclerViewOnClickCallback;
 
     List<UserModel> userList;
     Context mcontext;
 
-    public SearchAdapter(Context mcontext, SearchRVInterface searchRVInterface) {
+    public SearchAdapter(Context mcontext, SearchRecyclerViewOnClickCallback searchRecyclerViewOnClickCallback) {
         this.mcontext = mcontext;
-        this.searchRVInterface = searchRVInterface;
+        this.searchRecyclerViewOnClickCallback = searchRecyclerViewOnClickCallback;
     }
 
     @NonNull
@@ -39,7 +34,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.search_rv_item, parent, false);
-        return new SearchViewHolder(view, searchRVInterface);
+        return new SearchViewHolder(view, searchRecyclerViewOnClickCallback);
     }
 
     @Override
@@ -62,8 +57,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(searchRVInterface != null) {
-                    searchRVInterface.onItemClick(currUser.getUid());
+                if(searchRecyclerViewOnClickCallback != null) {
+                    searchRecyclerViewOnClickCallback.onItemClick(currUser.getUid());
                 }
             }
         });
@@ -84,7 +79,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         TextView name, username;
         ImageView profileImage;
 
-        public SearchViewHolder(@NonNull View itemView, SearchRVInterface searchRVInterface) {
+        public SearchViewHolder(@NonNull View itemView, SearchRecyclerViewOnClickCallback searchRecyclerViewOnClickCallback) {
             super(itemView);
 
             name = itemView.findViewById(R.id.search_rv_name);

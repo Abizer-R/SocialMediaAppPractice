@@ -27,12 +27,24 @@
     </androidx.appcompat.widget.Toolbar>
 
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/follow_user_fragment_toolbar"
+        android:indeterminate="true"/>
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/follow_user_fragment_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/follow_user_fragment_toolbar">
+        app:layout_constraintTop_toBottomOf="@id/follow_user_fragment_toolbar"
+        android:visibility="invisible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -173,7 +185,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/follow_user_fragment_name" />
 
             <TextView
-                android:id="@+id/profile_fragment_follow_btn"
+                android:id="@+id/follow_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -197,7 +209,7 @@
                 android:text="Show highlights"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_fragment_follow_btn"/>
+                app:layout_constraintTop_toBottomOf="@+id/follow_btn"/>
 
             <TextView
                 android:id="@+id/textView4"
