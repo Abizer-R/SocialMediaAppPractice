@@ -172,6 +172,10 @@ public class FollowUserFragment extends Fragment {
                             if(snapshot.child("bio").exists()) {
                                 binding.followUserFragmentUserBio.setText(snapshot.child("bio").getValue(String.class));
                             }
+                            binding.followUserFragmentPostCount.setText("" + snapshot.child("postCount").getValue(Long.class));
+                            binding.followUserFragmentFollowersCount.setText("" + snapshot.child("followerCount").getValue(Long.class));
+                            binding.followUserFragmentFollowingCount.setText("" + snapshot.child("followingCount").getValue(Long.class));
+
                         }
                     }
 

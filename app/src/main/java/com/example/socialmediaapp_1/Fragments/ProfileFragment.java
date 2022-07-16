@@ -116,6 +116,9 @@ public class ProfileFragment extends Fragment {
                             if(snapshot.child("bio").exists()) {
                                 binding.profileFragmentUserBio.setText(snapshot.child("bio").getValue(String.class));
                             }
+                            binding.profileFragmentPostCount.setText("" + snapshot.child("postCount").getValue(Long.class));
+                            binding.profileFragmentFollowersCount.setText("" + snapshot.child("followerCount").getValue(Long.class));
+                            binding.profileFragmentFollowingCount.setText("" + snapshot.child("followingCount").getValue(Long.class));
 
                         }
                     }

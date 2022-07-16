@@ -76,6 +76,9 @@ public class RegisterActivity extends AppCompatActivity {
                             map.put("email", emailEntered);
                             map.put("password", passwordEntered);
                             map.put("Uid", auth.getUid());
+                            map.put("postCount", 0);
+                            map.put("followerCount", 0);
+                            map.put("followingCount", 0);
 
                             dbRef.child(auth.getUid())
                                     .child("Info")
