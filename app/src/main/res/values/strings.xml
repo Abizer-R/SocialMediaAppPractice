@@ -55,5 +55,13 @@
     <string name="username">Username</string>
     <string name="bio">Bio</string>
 
+    <!--    Strings used in Follow User Fragment -->
+    <string name="follow">Follow</string>
+
+    <!--    Unique keys / identifiers -->
+    <string name="follow_user_bundle_key">follow_user_bundle_key</string>
+    <string name="USER_FOLLOW_STATUS_REQUESTED">Requested</string>
+    <string name="USER_FOLLOW_STATUS_FOLLOWING">Following</string>
+
 
 </resources>
